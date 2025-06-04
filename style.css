@@ -103,6 +103,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     padding: 1rem;
+  box-sizing: border-box;
 }
 
 .card {
@@ -116,8 +117,14 @@ body {
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
-    font-size: 0.6rem;
 }
+.card h1 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .card p {
+    font-size: 0.7rem;
+  }
 
 .card:hover {
     transform: translateY(-4px);
@@ -176,7 +183,7 @@ body,
     margin: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 820px) {
     .container {
         /* Una columna única, tantas filas como áreas */
         grid-template-columns: 1fr;
