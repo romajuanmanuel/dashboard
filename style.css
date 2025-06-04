@@ -1,20 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
 html,
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
     background-color: #F4F0FB;
     color: #4A4A4A;
 }
 
 .container {
     display: grid;
+    width: 100%;
+    height: 100vh;
     grid-template-columns: 0.7fr 1.5fr 0.8fr;
     grid-template-rows: 0.6fr 1.1fr 2fr 0.3fr;
-    grid-auto-flow: row;
-    gap: 1rem;
+    /* 1.1) Asigno nombres a cada área en el desktop */
+    grid-template-areas:
+        ".        header   header"
+        "dashboard projects announcements"
+        "options   projects trending"
+        "options   .        .";
     padding: 0.5rem;
+    background-color: #F4F0FB;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-sizing: border-box;
 }
+
 
 .header {
     display: grid;
@@ -32,11 +47,18 @@ body {
 .logo {
     grid-area: logo;
     background-color: #BFDCE5;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    align-items: center;
 }
 
 .user {
     grid-area: user;
     background-color: #DFF5E3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .nav {
@@ -46,37 +68,104 @@ body {
 
 .searchbar {
     grid-area: searchbar;
-    background-color: #FFE5B4;
+    background-color: #BFDCE5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
+
+.aesthetic-search {
+    width: 80%;
+    height: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.aesthetic-search:focus {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 
 .main {
     grid-area: 2 / 2 / 4 / 4;
-   
+
 }
 
 .projects {
     grid-area: 2 / 2 / 4 / 3;
     background-color: #C8BFE7;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border-left: peachpuff 10px solid;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-size: 0.6rem;
+}
+
+.card:hover {
+    transform: translateY(-4px);
 }
 
 .announcements {
     grid-area: 2 / 3 / 3 / 4;
     background-color: #C8BFE7;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.announcement-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
 .trending {
     grid-area: 3 / 3 / 4 / 4;
     background-color: #C8BFE7;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
 }
 
 .dashboard {
     grid-area: 1 / 1 / 2 / 2;
     background-color: #BFDCE5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
 }
 
 .options {
     grid-area: 2 / 1 / 4 / 2;
     background-color: #BFDCE5;
+
 }
 
 
@@ -87,27 +176,31 @@ body,
     margin: 0;
 }
 
-/* For presentation only, no need to copy the code below */
-
-.container * {
-    position: relative;
-  border-radius: 1rem;
-  box-shadow:0 10px 20px rgba(0, 0, 0, 0.1);
-}
-.container *:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-    transform: scale(1.01);
-}
-
-.container *:after {
-    content: attr(class);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 600px) {
+    .container {
+        /* Una columna única, tantas filas como áreas */
+        grid-template-columns: 1fr;
+        grid-template-rows:
+            auto
+            /* header */
+            auto
+            /* dashboard */
+            auto
+            /* options */
+            auto
+            /* projects */
+            auto
+            /* announcements */
+            auto;
+        /* trending */
+        grid-template-areas:
+            "header"
+            "dashboard"
+            "options"
+            "projects"
+            "announcements"
+            "trending";
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
 }
