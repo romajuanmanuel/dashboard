@@ -136,17 +136,20 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: auto;
-    gap: 1rem;
     padding: 1rem;
     overflow-y: auto;
 }
 
 .announcement-card {
     background: white;
-    border-radius: 1rem;
     padding: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.announcement-card:hover {
+    transform: translateY(-4px);
 }
 
 .trending {
@@ -157,6 +160,17 @@ body {
     grid-auto-rows: auto;
     gap: 1rem;
     padding: 1rem;
+}
+
+.trending-card{
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+.trending-card:hover {
+    transform: translateY(-4px);
 }
 
 .dashboard {
