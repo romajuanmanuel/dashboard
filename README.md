@@ -8,6 +8,7 @@ Live preview available at https://romajuanmanuel.github.io/dashboard/
 
 ## 📁 Project Structure
 
+project-root/
 ├── index.html # Main HTML file
 ├── style.css # External stylesheet
 └── icons/ # Folder containing UI SVG icons
