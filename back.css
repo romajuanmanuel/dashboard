@@ -1,16 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-}
 
 html,
 body {
-
+    margin: 0;
+    padding: 0;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     background-color: #F4F0FB;
@@ -22,13 +16,13 @@ body {
     width: 100%;
     height: 100vh;
     grid-template-columns: 0.7fr 1.5fr 0.8fr;
-    grid-template-rows: 0.6fr 1.5fr 1.6fr 0.3fr;
+    grid-template-rows: 0.6fr 1.1fr 2fr 0.3fr;
     /* 1.1) Asigno nombres a cada área en el desktop */
     grid-template-areas:
-        "dashboard header   header"
+        ".        header   header"
         "dashboard projects announcements"
         "options   projects trending"
-        "options   projects  trending";
+        "options   .        .";
     padding: 0.5rem;
     background-color: #F4F0FB;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -109,7 +103,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     padding: 1rem;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .card {
@@ -120,20 +114,17 @@ body {
     transition: transform 0.3s ease;
     border-left: peachpuff 10px solid;
     max-width: 100%;
-    max-height: 50%;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
 }
-
 .card h1 {
     font-size: 1rem;
     margin-bottom: 0.5rem;
-}
-
-.card p {
+  }
+  .card p {
     font-size: 0.7rem;
-}
+  }
 
 .card:hover {
     transform: translateY(-4px);
@@ -145,11 +136,9 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: auto;
-    gap: 1rem;
     padding: 1rem;
-    /*overflow-y: auto;*/
+    overflow-y: auto;
 }
-
 /*****************************************************/
 /*
 .announcement-card {
@@ -185,19 +174,18 @@ body {
 
 .announcement-card h1,
 .trending-card h1 {
-    font-size: clamp(1rem, 1vw, 1rem);
+    font-size: clamp(1rem, 2vw, 1.3rem);
     margin: 0;
     color: #4A4A4A;
 }
 
 .announcement-card p,
 .trending-card p {
-    font-size: clamp(0.9rem, 0.9vw, 1rem);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     margin: 0;
     color: #555;
     line-height: 1.4;
 }
-
 /*****************************************************/
 .trending {
     grid-area: 3 / 3 / 4 / 4;
@@ -209,14 +197,13 @@ body {
     padding: 1rem;
 }
 
-.trending-card {
+.trending-card{
     background: white;
     border-radius: 1rem;
     padding: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
-
 .trending-card:hover {
     transform: translateY(-4px);
 }
@@ -234,13 +221,7 @@ body {
 .options {
     grid-area: 2 / 1 / 4 / 2;
     background-color: #BFDCE5;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: end;
-    font-size: 1rem;
-    padding: 1rem;
-    box-sizing: border-box;
+
 }
 
 
