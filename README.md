@@ -4,10 +4,10 @@ This is a **responsive and visually appealing web dashboard** designed for a coo
 
 ## 🌐 Live Preview
 
-You can view this page by simply opening `index.html` in any modern web browser.
+Live preview available at https://romajuanmanuel.github.io/dashboard/
 
 ## 📁 Project Structure
-.
+
 ├── index.html # Main HTML file
 ├── style.css # External stylesheet
 └── icons/ # Folder containing UI SVG icons
