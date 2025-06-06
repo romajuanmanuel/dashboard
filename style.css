@@ -56,6 +56,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
     align-items: center;
+    justify-items: end;
 }
 
 .user {
@@ -379,10 +380,12 @@ body.dark-mode .menu-item div::after {
 /*******************************************/
 #dark-mode-toggle {
     background: none;
-    border: none;
-    font-size: 1.5rem;
+    border: 1px solid #4A4A4A;
+    font-size: 1rem;
     cursor: pointer;
     transition: transform 0.3s ease;
+    padding: 0.5rem 1rem;
+
 }
 
 #dark-icon.rotate {
