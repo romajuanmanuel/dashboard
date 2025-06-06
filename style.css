@@ -170,20 +170,7 @@ body {
 }
 
 /*****************************************************/
-/*
-.announcement-card {
-    background: white;
-    padding: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-    border-bottom: 1px solid #E0E0E0;
-}
-
-.announcement-card:hover {
-    transform: translateY(-4px);
-}
-    */
-/*****************************************************/
+/* Announcement and Trending Cards */
 .announcement-card,
 .trending-card {
     background: white;
@@ -220,6 +207,7 @@ body {
 }
 
 /*****************************************************/
+/* Trending Section */
 .trending {
     grid-area: 3 / 3 / 4 / 4;
     background-color: #C8BFE7;
@@ -243,6 +231,7 @@ body {
 }
 
 /*****************************************************/
+/* Dashboard, Options, and Menu */
 .dashboard {
     grid-area: 1 / 1 / 2 / 2;
     background-color: #BFDCE5;
@@ -273,16 +262,6 @@ body {
 }
 
 /***********      EFFECTS ***************************/
-/*
-.menu-item {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .menu-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-  }*/
   .menu-item div {
     position: relative;
     display: inline-block;
@@ -346,5 +325,76 @@ body,
             "trending";
         gap: 0.5rem;
         padding: 0.5rem;
+    }
+}
+
+/***************************************/
+body.dark-mode {
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+body.dark-mode .container {
+    background-color: #1E1E1E;
+    box-shadow: none;
+}
+
+body.dark-mode .header,
+body.dark-mode .logo,
+body.dark-mode .user,
+body.dark-mode .nav,
+body.dark-mode .searchbar,
+body.dark-mode .projects,
+body.dark-mode .announcements,
+body.dark-mode .trending,
+body.dark-mode .dashboard,
+body.dark-mode .options {
+    background-color: #2C2C2C;
+}
+
+body.dark-mode .card,
+body.dark-mode .announcement-card,
+body.dark-mode .trending-card, body.dark-mode .announcement-card h1,
+body.dark-mode .trending-card h1,
+body.dark-mode .announcement-card p,
+body.dark-mode .trending-card p 
+ {
+    background-color: #1A1A1A;
+    color: #E0E0E0;
+    border-color: #444;
+}
+
+body.dark-mode .nav button {
+    background-color: #333;
+    color: #FFF;
+}
+
+body.dark-mode .menu-item:hover {
+    color: #E0E0E0;
+}
+
+body.dark-mode .menu-item div::after {
+    background: #E0E0E0;
+}
+/*******************************************/
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#dark-icon.rotate {
+    display: inline-block;
+    animation: spin 0.3s ease;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
     }
 }
